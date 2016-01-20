@@ -12,5 +12,7 @@
 		echo "Hello world!!!"; // Echo е по-използвания и предпочитан синтаксис.
 		print "Hello world again!!!";
 	?>
+	<!-- Ето и как може да вгради php код съдържащ заглавие в HTML <h1> tag -->
+	<h1><?php echo "Hello world title" ?></h1>
 </body>
 </html>

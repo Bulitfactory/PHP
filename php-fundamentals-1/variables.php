@@ -36,7 +36,7 @@
 
 		// Array
 		$myArray = array(20, 3.14, true, "Some text");
-		echo $myArray(2).'<br />';
+		echo $myArray[2].'<br />';
 	?>
 </body>
 </html>

@@ -27,7 +27,7 @@
 		$personalInfo = [
 			"firstName"  => "Svetoslav",
 			"lastName"   => "Toshkin",
-			"age" 		 => 36,
+			"age"        => 36,
 			"eyes"       => "Dark brown" 
 		];
 

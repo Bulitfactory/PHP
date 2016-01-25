@@ -8,13 +8,32 @@
 	<?php
 	
 		$myFirstName = "Svetoslav Toshkin"; // Декларираме променлива.
-		echo $myFirstName; // Изваждаме стойноста на променливата на HTML страницата.
-		// Като резултат ще се изведе Svetoslav Toshkin.
+		echo $myFirstName.'<br />'; // Изваждаме стойноста на променливата на HTML страницата. С точка извършваме конкатенация сливане/събиране на два буквени низа от край до край.
+		// Като резултат ще се изведе Svetoslav Toshkin + нов ред.
 		
 		// Внимавайте!!! Ако използвате име на една и съща променлива, но зададем нова стойност, старата ще се презапише!!!
 		$myFirstName = "New Value"; 
-		echo $myFirstName; // Като резултат ще върне New Value.
-	
+		echo $myFirstName.'<br />'; // Като резултат ще върне New Value.
+
+		// String
+		$myStringVar = "Some text";
+		echo $myStringVar.'<br />';
+
+		// Integer
+		$myIntegerVar = 20;
+		echo $myIntegerVar.'<br />';
+
+		// Float
+		$myFloatVar = 3.14;
+		echo $myIntegerVar.'<br />';
+
+		// Boolean
+		$myBooleanVar = true;
+		echo $myBooleanVar.'<br />';
+
+		// Array
+		$myArray = array(20, 3.14, true, "Some text");
+		echo $myArray(2).'<br />';
 	?>
 </body>
 </html>

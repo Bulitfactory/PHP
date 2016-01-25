@@ -23,6 +23,16 @@
 		// Ако искаме да извикаме конкретна стойност, трябва да я повикаме по нейния ключ
 		echo $myFirstArray["key3"];
 
+		// Инициализиране на асоциативен масив, по подобие на Javascript. Работи след версия PHP 5.4
+		$personalInfo = [
+			"firstName"  => "Svetoslav",
+			"lastName"   => "Toshkin",
+			"age" 		 => 36,
+			"eyes"       => "Dark brown" 
+		];
+
+		echo $personalInfo["firstName"];
+
 		// Инициализиране на неасоциативен масив,
 		$fruits = array(
 			"Bananas", 

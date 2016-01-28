@@ -5,6 +5,7 @@
 	<title>Функции | Functions</title>
 </head>
 <body>
+	
 	<?php
 
 		/* Функции без параметри
@@ -19,5 +20,6 @@
 		createDinamicHtmlTags(); // извикване на функция/изпълнение.
 		
 	?>
+	
 </body>
 </html>

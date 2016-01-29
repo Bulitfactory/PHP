@@ -7,7 +7,13 @@
 <body>
 	
 	<?php
-		$nameError = " ";
+		/* 
+		* Задължително трябва да декларираме нулев стринг стойности на променливите, 
+		* които ще държат съобщенията за грешки!!!
+		*/
+		$nameError     = "";
+		$emailError    = "";
+		$passwordError = "";
 
 		// Проверяваме дали е изпълнена POST заявка.
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,14 +45,18 @@
 			<legend>My first HTM form</legend>
 
 			<label for="username">Username: </label><br />
-			<input type="text" name="username" placeholder="Please enter an username" id="username" value="<?php $_POST['username'] ?>" />
+			<!-- Като в края на input полето използваме php script във value показваме old input на потребителя, за да не се налага да попълва полето на ново -->
+			<!-- Ако потребителя реши може да допълни или промени стойността във input полето -->
+			<input type="text" name="username" placeholder="Please enter an username" id="username" value="<?php if($_SERVER["REQUEST_METHOD"] == "POST") { echo $_POST['username']; } ?>" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $nameError ?>
 
 			<br />
 
 			<label for="useremail">Email: </label><br />
-			<input type="email" name="useremail" placeholder="Please enter an email" id="useremail" />
+			<!-- Като в края на input полето използваме php script във value показваме old input на потребителя, за да не се налага да попълва полето на ново -->
+			<!-- Ако потребителя реши може да допълни или промени стойността във input полето -->
+			<input type="email" name="useremail" placeholder="Please enter an email" id="useremail" value="<?php if($_SERVER["REQUEST_METHOD"] == "POST") { echo $_POST['useremail']; } ?>" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $emailError ?>
 

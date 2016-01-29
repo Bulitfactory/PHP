@@ -8,13 +8,14 @@
 	
 	<?php
 		// Проверяваме дали е изпълнена POST заявка.
-		if(!$_POST) {
-			echo "Please enter a form below!!!";
-		}
 		// Ако е изпълнена показваме резултатите от POST заявката.
-		else {
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "Welcome: ".$_POST["username"]."<br />".
 		 	     "Your emai is: ".$_POST["useremail"]."<br />";
+		}
+		// Ако не 
+		else {
+			echo "Please enter a form below!!!";
 		}
 	?>
 
@@ -29,6 +30,8 @@
 			<legend>My first HTM form</legend>
 
 			<label for="username">Username: </label><br />
+			<!-- required ни дава проста HTML валидация, която лесно може да бъде излъгана, затова е важно валидацията да мине през php -->
+			<!-- Валидация с PHP ще намерите в слвдващия файл validation.php -->
 			<input type="text" name="username" placeholder="Please enter an username" id="username" required />
 
 			<br />

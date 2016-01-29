@@ -7,10 +7,11 @@
 <body>
 	
 	<?php
-
+		// Проверяваме дали е изпълнена POST заявка.
 		if(!$_POST) {
 			echo "Please enter a form below!!!";
 		}
+		// Ако е изпълнена показваме резултатите от POST заявката.
 		else {
 			echo "Welcome: ".$_POST["username"]."<br />".
 		 	     "Your emai is: ".$_POST["useremail"]."<br />";
@@ -18,7 +19,9 @@
 	?>
 
 	<hr />
-	
+
+	<!-- В action пускаме скрипт, който изпълнява заявката на същата страница -->
+	<!--  echo htmlspecialchars ни помага да преобразуваме опасните спецялни символи <> за таг, в безопасни такива &lt; и &gt; -->
 	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
 		<fieldset>

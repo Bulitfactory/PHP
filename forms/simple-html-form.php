@@ -47,7 +47,7 @@
 			<label for="username">Username: </label><br />
 			<!-- Като в края на input полето използваме php script във value показваме old input на потребителя, за да не се налага да попълва полето на ново -->
 			<!-- Ако потребителя реши може да допълни или промени стойността във input полето -->
-			<input type="text" name="username" placeholder="Please enter an username" id="username" value="<?php echo $_POST['username']?>" />
+			<input type="text" name="username" placeholder="Please enter an username" id="username" value="<?php if($_SERVER["REQUEST_METHOD"] == "POST") { echo $_POST['username']; } ?>" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $nameError ?>
 
@@ -56,7 +56,7 @@
 			<label for="useremail">Email: </label><br />
 			<!-- Като в края на input полето използваме php script във value показваме old input на потребителя, за да не се налага да попълва полето на ново -->
 			<!-- Ако потребителя реши може да допълни или промени стойността във input полето -->
-			<input type="email" name="useremail" placeholder="Please enter an email" id="useremail" value="<?php echo $_POST['useremail']?>"  />
+			<input type="email" name="useremail" placeholder="Please enter an email" id="useremail" value="<?php if($_SERVER["REQUEST_METHOD"] == "POST") { echo $_POST['useremail']; } ?>" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $emailError ?>
 

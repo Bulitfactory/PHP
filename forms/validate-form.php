@@ -18,6 +18,7 @@
 		$printName     = "";
 		$printEmail    = "";
 		$printPassword = "";
+		
 		// Проверяваме дали е изпълнена POST заявка.
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// Ако е изпълнена такава заявка правим валидация на входните данни.

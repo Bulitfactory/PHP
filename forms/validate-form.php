@@ -9,23 +9,32 @@
 	<?php
 		/* 
 		* Задължително трябва да декларираме нулев стринг стойности на променливите, 
-		* които ще държат съобщенията за грешки!!!
+		* които ще държат съобщенията за грешки и тези които при успешно премината проверка
+		* ще отпечатат стойностите които сме изпратили с $_POST() към сървъра!!!
 		*/
 		$nameError     = "";
 		$emailError    = "";
 		$passwordError = "";
-
+		$printName     = "";
+		$printEmail    = "";
+		$printPassword = "";
 		// Проверяваме дали е изпълнена POST заявка.
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// Ако е изпълнена такава заявка правим валидация на входните данни.
 			if (empty($_POST["username"])) {
 				$nameError = "The name field is required!!!";
+			} else {
+				$printName = $_POST["username"];
 			}
 			if (empty($_POST["useremail"])) {
 				$emailError = "The email field is required!!!";
+			} else {
+				$printEmail = $_POST["useremail"];
 			}
-			if (empty($_POST["userepassword"])) {
+			if (empty($_POST["userpassword"])) {
 				$passwordError = "The password field is required!!!";
+			} else {
+				$printPassword = $_POST["userpassword"];
 			}
 		}
 		// Ако не 
@@ -50,6 +59,7 @@
 			<input type="text" name="username" placeholder="Please enter an username" id="username" value="<?php if($_SERVER["REQUEST_METHOD"] == "POST") { echo $_POST['username']; } ?>" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $nameError ?>
+			<?php echo $printName ?>
 
 			<br />
 
@@ -59,6 +69,7 @@
 			<input type="email" name="useremail" placeholder="Please enter an email" id="useremail" value="<?php if($_SERVER["REQUEST_METHOD"] == "POST") { echo $_POST['useremail']; } ?>" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $emailError ?>
+			<?php echo $printEmail ?>
 
 			<br />
 
@@ -66,6 +77,7 @@
 			<input type="password" name="userpassword" placeholder="Please enter a password" />
 			<!-- Показваме под полето грешките, ако има такива -->
 			<?php echo $passwordError ?>
+			<?php echo $printPassword ?>
 
 			<br /><br />
 

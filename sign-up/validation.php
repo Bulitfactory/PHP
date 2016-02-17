@@ -66,6 +66,9 @@
         // Ако преминат горните проверки се прилага функцията function validateData($data);
         else {
             $valUserPass = validateData($_POST["password"]);
+            // Преди да запишем паролата в базата, към променливата, която я пази прибавяме и хеш алгоритъм mb5.
+            // mb5 - ще я преобразува в 16 битов случаен символен низ.
+            $valUserPass = md5($valUserPass);
         }
         // Проверка за липса на data в input полето.
         if(empty($_POST["confirm_password"])){

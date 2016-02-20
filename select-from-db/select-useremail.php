@@ -1,4 +1,5 @@
 <?php
+
     $useremail = "svetlio.toshkin@gmail.com";
 
     // Свързваме глобалната променлива $connection към prepare statement.

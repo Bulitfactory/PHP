@@ -9,8 +9,6 @@
         $dbPass = "";
         $dbName = "dbname";
 
-        global $connection;
-
         // Осъществяваме конекцията.
         $connection = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 

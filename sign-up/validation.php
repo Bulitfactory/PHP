@@ -25,7 +25,7 @@
         }
         // Ако преминат горните проверки се прилага функцията function validateData($data);
         else {
-            $valUserName = validateData($_POST["useremail"]);
+            $valUserName = validateData($_POST["username"]);
         }
         // Проверка за липса на data в input полето.
         if (empty($_POST["useremail"])) {

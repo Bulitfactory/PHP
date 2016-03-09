@@ -22,5 +22,7 @@
     else {
         echo "Нещо се обърка!!!";
     }
+    
+    $connection->close();
 
 ?>
